@@ -3,7 +3,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim command As String
         command = "select * from msemployee where (email='" & TextBox1.Text & "' or handphone='" & TextBox1.Text & "') and password='" & Koneksi.sha512enc(TextBox2.Text) & "'"
-        dt = SqlCommand(command)
+        dt = Read(command)
         If dt.Rows.Count > 0 Then
             MsgBox("Hello " + dt.Rows(0)(1))
             Home.Show()

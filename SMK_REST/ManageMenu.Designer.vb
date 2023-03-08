@@ -26,11 +26,6 @@ Partial Class ManageMenu
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -45,6 +40,12 @@ Partial Class ManageMenu
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MaskedTextBox0 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -73,41 +74,6 @@ Partial Class ManageMenu
         Me.Label2.Size = New System.Drawing.Size(64, 25)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Search"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(156, 538)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(150, 31)
-        Me.TextBox2.TabIndex = 4
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(156, 575)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(150, 31)
-        Me.TextBox3.TabIndex = 5
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(156, 612)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(150, 31)
-        Me.TextBox4.TabIndex = 6
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(156, 501)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(150, 31)
-        Me.TextBox5.TabIndex = 7
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(156, 652)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(150, 31)
-        Me.TextBox6.TabIndex = 8
         '
         'Label3
         '
@@ -157,18 +123,18 @@ Partial Class ManageMenu
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(31, 652)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 25)
+        Me.Label8.Size = New System.Drawing.Size(68, 25)
         Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Search"
+        Me.Label8.Text = "Protein"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(31, 615)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(64, 25)
+        Me.Label9.Size = New System.Drawing.Size(60, 25)
         Me.Label9.TabIndex = 15
-        Me.Label9.Text = "Search"
+        Me.Label9.Text = "Carbo"
         '
         'Button1
         '
@@ -227,11 +193,66 @@ Partial Class ManageMenu
         Me.Panel1.Size = New System.Drawing.Size(619, 259)
         Me.Panel1.TabIndex = 21
         '
+        'MaskedTextBox0
+        '
+        Me.MaskedTextBox0.Location = New System.Drawing.Point(156, 501)
+        Me.MaskedTextBox0.Name = "MaskedTextBox0"
+        Me.MaskedTextBox0.Size = New System.Drawing.Size(150, 31)
+        Me.MaskedTextBox0.TabIndex = 22
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(156, 538)
+        Me.MaskedTextBox1.Mask = "000000000000000000000"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(150, 31)
+        Me.MaskedTextBox1.TabIndex = 23
+        Me.MaskedTextBox1.ValidatingType = GetType(Integer)
+        '
+        'MaskedTextBox2
+        '
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(156, 575)
+        Me.MaskedTextBox2.Name = "MaskedTextBox2"
+        Me.MaskedTextBox2.Size = New System.Drawing.Size(150, 31)
+        Me.MaskedTextBox2.TabIndex = 24
+        '
+        'MaskedTextBox3
+        '
+        Me.MaskedTextBox3.Location = New System.Drawing.Point(156, 612)
+        Me.MaskedTextBox3.Mask = "00000"
+        Me.MaskedTextBox3.Name = "MaskedTextBox3"
+        Me.MaskedTextBox3.Size = New System.Drawing.Size(150, 31)
+        Me.MaskedTextBox3.TabIndex = 25
+        Me.MaskedTextBox3.ValidatingType = GetType(Integer)
+        '
+        'MaskedTextBox4
+        '
+        Me.MaskedTextBox4.Location = New System.Drawing.Point(156, 649)
+        Me.MaskedTextBox4.Mask = "00000"
+        Me.MaskedTextBox4.Name = "MaskedTextBox4"
+        Me.MaskedTextBox4.Size = New System.Drawing.Size(150, 31)
+        Me.MaskedTextBox4.TabIndex = 26
+        Me.MaskedTextBox4.ValidatingType = GetType(Integer)
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(419, 695)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(231, 34)
+        Me.ProgressBar1.TabIndex = 27
+        Me.ProgressBar1.Visible = False
+        '
         'ManageMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(685, 769)
+        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.MaskedTextBox4)
+        Me.Controls.Add(Me.MaskedTextBox3)
+        Me.Controls.Add(Me.MaskedTextBox2)
+        Me.Controls.Add(Me.MaskedTextBox1)
+        Me.Controls.Add(Me.MaskedTextBox0)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -245,11 +266,6 @@ Partial Class ManageMenu
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
@@ -265,11 +281,6 @@ Partial Class ManageMenu
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -284,4 +295,10 @@ Partial Class ManageMenu
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents MaskedTextBox0 As MaskedTextBox
+    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents MaskedTextBox2 As MaskedTextBox
+    Friend WithEvents MaskedTextBox3 As MaskedTextBox
+    Friend WithEvents MaskedTextBox4 As MaskedTextBox
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class
