@@ -81,5 +81,11 @@ Module Koneksi
         Return queryNow
     End Function
 
+    Public Function NoBind(query As String)
+        Dim queryNow As New MySqlCommand()
+        queryNow.CommandText = query
+        Return queryNow
+    End Function
+
 
 End Module

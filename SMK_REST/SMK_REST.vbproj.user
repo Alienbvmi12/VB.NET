@@ -7,7 +7,16 @@
     <Compile Update="Home.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="HomeCashier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManageMember.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ManageMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Order.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

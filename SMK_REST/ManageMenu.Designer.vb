@@ -39,14 +39,19 @@ Partial Class ManageMenu
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MaskedTextBox0 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -186,13 +191,6 @@ Partial Class ManageMenu
         Me.Button4.Text = "Insert"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Panel1
-        '
-        Me.Panel1.Location = New System.Drawing.Point(31, 173)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(619, 259)
-        Me.Panel1.TabIndex = 21
-        '
         'MaskedTextBox0
         '
         Me.MaskedTextBox0.Location = New System.Drawing.Point(156, 501)
@@ -236,24 +234,63 @@ Partial Class ManageMenu
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(419, 695)
+        Me.ProgressBar1.Location = New System.Drawing.Point(445, 544)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(231, 34)
+        Me.ProgressBar1.Size = New System.Drawing.Size(182, 34)
         Me.ProgressBar1.TabIndex = 27
         Me.ProgressBar1.Visible = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 62
+        Me.DataGridView1.RowTemplate.Height = 33
+        Me.DataGridView1.Size = New System.Drawing.Size(568, 246)
+        Me.DataGridView1.TabIndex = 28
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Location = New System.Drawing.Point(56, 174)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(571, 249)
+        Me.Panel1.TabIndex = 29
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(31, 695)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(275, 34)
+        Me.Button5.TabIndex = 30
+        Me.Button5.Text = "Clear form"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(419, 700)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(231, 29)
+        Me.CheckBox1.TabIndex = 31
+        Me.CheckBox1.Text = "Don't confirm my action"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'ManageMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(685, 769)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.MaskedTextBox4)
         Me.Controls.Add(Me.MaskedTextBox3)
         Me.Controls.Add(Me.MaskedTextBox2)
         Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(Me.MaskedTextBox0)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -272,6 +309,8 @@ Partial Class ManageMenu
         Me.Name = "ManageMenu"
         Me.Text = "ManageMenu"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -294,11 +333,14 @@ Partial Class ManageMenu
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents MaskedTextBox0 As MaskedTextBox
     Friend WithEvents MaskedTextBox1 As MaskedTextBox
     Friend WithEvents MaskedTextBox2 As MaskedTextBox
     Friend WithEvents MaskedTextBox3 As MaskedTextBox
     Friend WithEvents MaskedTextBox4 As MaskedTextBox
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button5 As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

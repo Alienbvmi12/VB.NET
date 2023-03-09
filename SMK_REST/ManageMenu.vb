@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
+Imports MySql.Data.MySqlClient
 Public Class ManageMenu
     Public dt As New DataTable
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
@@ -24,19 +25,25 @@ Public Class ManageMenu
 
     Private Function TampilTabel()
         Dim query As String = "Select * from msmenu"
-        Panel1.Controls.Clear()
         dt = Read(query)
-        Dim dgv As New DataGridView()
-        Panel1.Controls.Add(dgv)
-        dgv.Dock = DockStyle.Fill
-        dgv.DataSource = dt
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.DataSource = dt
     End Function
 
     Private Function insert()
-        Dim sql As String = "Insert into msmenu(name, price, photo, carbo, protein) values (@name, @price, @photo, @carbo, @protein)"
-        Dim finalSql = Bind(sql, {"@name", "@price", "@photo", "@carbo", "@protein"}, {MaskedTextBox0.Text, MaskedTextBox1.Text, MaskedTextBox2.Text, MaskedTextBox3.Text, MaskedTextBox4.Text})
-        NoReturnValue(finalSql)
-        TampilTabel()
+        If CheckBox1.Checked = False Then
+            If MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim sql As String = "Insert into msmenu(name, price, photo, carbo, protein) values (@name, @price, @photo, @carbo, @protein)"
+                Dim finalSql = Bind(sql, {"@name", "@price", "@photo", "@carbo", "@protein"}, {MaskedTextBox0.Text, MaskedTextBox1.Text, MaskedTextBox2.Text, MaskedTextBox3.Text, MaskedTextBox4.Text})
+                NoReturnValue(finalSql)
+                TampilTabel()
+            End If
+        Else
+            Dim sql As String = "Insert into msmenu(name, price, photo, carbo, protein) values (@name, @price, @photo, @carbo, @protein)"
+            Dim finalSql = Bind(sql, {"@name", "@price", "@photo", "@carbo", "@protein"}, {MaskedTextBox0.Text, MaskedTextBox1.Text, MaskedTextBox2.Text, MaskedTextBox3.Text, MaskedTextBox4.Text})
+            NoReturnValue(finalSql)
+            TampilTabel()
+        End If
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -98,5 +105,70 @@ Public Class ManageMenu
 
     Private Sub MaskedTextBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles MaskedTextBox2.KeyUp
         PreviewImage(MaskedTextBox2.Text)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If CheckBox1.Checked = False Then
+            If MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim sql As String = "Delete from msmenu where id='" & Label3.Text & "'"
+                Dim finalSql = NoBind(sql)
+                NoReturnValue(finalSql)
+                TampilTabel()
+            End If
+        Else
+            Dim sql As String = "Delete from msmenu where id='" & Label3.Text & "'"
+            Dim finalSql = NoBind(sql)
+            NoReturnValue(finalSql)
+            TampilTabel()
+        End If
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+            MaskedTextBox0.Text = selectedRow.Cells(1).Value.ToString()
+            MaskedTextBox1.Text = selectedRow.Cells(2).Value.ToString()
+            MaskedTextBox2.Text = selectedRow.Cells(3).Value.ToString()
+            MaskedTextBox3.Text = selectedRow.Cells(4).Value.ToString()
+            MaskedTextBox4.Text = selectedRow.Cells(5).Value.ToString()
+            Label3.Text = selectedRow.Cells(0).Value.ToString()
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If CheckBox1.Checked = False Then
+            If MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim sql As String = "update msmenu set name=@name, price=@price, photo=@photo, carbo=@carbo, protein=@protein where id=@id"
+                Dim finalSql = Bind(sql, {"@name", "@price", "@photo", "@carbo", "@protein", "@id"}, {MaskedTextBox0.Text, MaskedTextBox1.Text, MaskedTextBox2.Text, MaskedTextBox3.Text, MaskedTextBox4.Text, Label3.Text})
+                NoReturnValue(finalSql)
+                TampilTabel()
+            End If
+        Else
+            Dim sql As String = "update msmenu set name=@name, price=@price, photo=@photo, carbo=@carbo, protein=@protein where id=@id"
+            Dim finalSql = Bind(sql, {"@name", "@price", "@photo", "@carbo", "@protein", "@id"}, {MaskedTextBox0.Text, MaskedTextBox1.Text, MaskedTextBox2.Text, MaskedTextBox3.Text, MaskedTextBox4.Text, Label3.Text})
+            NoReturnValue(finalSql)
+            TampilTabel()
+        End If
+    End Sub
+
+    Private Sub TextBox1_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyUp
+        Dim query As String = "Select * from msmenu where name like '%" & TextBox1.Text & "%' or price like '%" & TextBox1.Text & "%' or photo like '%" & TextBox1.Text & "%' or carbo like '%" & TextBox1.Text & "%' or protein like '%" & TextBox1.Text & "%' or id like '%" & TextBox1.Text & "%'"
+        dt = Read(query)
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.DataSource = dt
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Label3.Text = ""
+        MaskedTextBox0.Text = ""
+        MaskedTextBox1.Text = ""
+        MaskedTextBox2.Text = ""
+        MaskedTextBox3.Text = ""
+        MaskedTextBox4.Text = ""
     End Sub
 End Class
