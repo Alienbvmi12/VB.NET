@@ -41,18 +41,40 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         sql = "select * from msmenu where name='" & MaskedTextBox1.Text & "'"
         dt = Read(sql)
-        If dt.Rows.Count > 0 Then
-            Dim newRow As New DataGridViewRow
-            newRow.CreateCells(DataGridView2)
-            newRow.Cells(0).Value = MaskedTextBox1.Text
-            newRow.Cells("Qty").Value = MaskedTextBox2.Text
-            newRow.Cells("CarboH").Value = dt.Rows(0)(4).Value
-            newRow.Cells("ProteinN").Value = dt.Rows(0)(5).Value
-            newRow.Cells("Price").Value = dt.Rows(0)(2).Value
-            newRow.Cells("Total").Value = dt.Rows(0)(2).Value * MaskedTextBox2.Text
-            DataGridView2.Rows.Add(newRow)
+        Dim pil = True
+        If DataGridView2.RowCount > 0 Then
+            For Each row As DataGridViewRow In DataGridView2.Rows
+                If row.Cells(0).Value = MaskedTextBox1.Text Then
+                    row.Cells(1).Value = (Integer.Parse(row.Cells(1).Value) + Integer.Parse(MaskedTextBox2.Text)).ToString
+                    row.Cells(2).Value = (Integer.Parse(row.Cells(2).Value) + Integer.Parse(MaskedTextBox2.Text) * dt.Rows(0)(4)).ToString
+                    row.Cells(3).Value = (Integer.Parse(row.Cells(3).Value) + Integer.Parse(MaskedTextBox2.Text) * dt.Rows(0)(5)).ToString
+                    row.Cells(5).Value = (Integer.Parse(row.Cells(5).Value) + Integer.Parse(MaskedTextBox2.Text) * dt.Rows(0)(2)).ToString
+                    pil = False
+                End If
+            Next
+            If pil Then
+                Dim newRow As New DataGridViewRow
+                newRow.CreateCells(DataGridView2)
+                newRow.Cells(0).Value = MaskedTextBox1.Text
+                newRow.Cells(1).Value = MaskedTextBox2.Text
+                newRow.Cells(2).Value = dt.Rows(0)(4) * newRow.Cells(1).Value
+                newRow.Cells(3).Value = dt.Rows(0)(5) * newRow.Cells(1).Value
+                newRow.Cells(4).Value = dt.Rows(0)(2)
+                newRow.Cells(5).Value = dt.Rows(0)(2) * newRow.Cells(1).Value
+                DataGridView2.Rows.Add(newRow)
+            End If
         Else
-            MessageBox.Show("Menu tidak ada!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If pil Then
+                Dim newRow As New DataGridViewRow
+                newRow.CreateCells(DataGridView2)
+                newRow.Cells(0).Value = MaskedTextBox1.Text
+                newRow.Cells(1).Value = MaskedTextBox2.Text
+                newRow.Cells(2).Value = dt.Rows(0)(4) * newRow.Cells(1).Value
+                newRow.Cells(3).Value = dt.Rows(0)(5) * newRow.Cells(1).Value
+                newRow.Cells(4).Value = dt.Rows(0)(2)
+                newRow.Cells(5).Value = dt.Rows(0)(2) * newRow.Cells(1).Value
+                DataGridView2.Rows.Add(newRow)
+            End If
         End If
     End Sub
 

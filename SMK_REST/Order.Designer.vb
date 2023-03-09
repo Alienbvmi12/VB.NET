@@ -26,6 +26,12 @@ Partial Class Order
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Menu = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CarboH = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProteinN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,12 +47,6 @@ Partial Class Order
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.Menu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CarboH = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProteinN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Price = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -90,6 +90,49 @@ Partial Class Order
         Me.DataGridView2.RowTemplate.Height = 33
         Me.DataGridView2.Size = New System.Drawing.Size(752, 241)
         Me.DataGridView2.TabIndex = 0
+        '
+        'Menu
+        '
+        Me.Menu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Menu.HeaderText = "Menu"
+        Me.Menu.MinimumWidth = 8
+        Me.Menu.Name = "Menu"
+        Me.Menu.Width = 93
+        '
+        'Qty
+        '
+        Me.Qty.HeaderText = "Qty"
+        Me.Qty.MinimumWidth = 8
+        Me.Qty.Name = "Qty"
+        Me.Qty.Width = 150
+        '
+        'CarboH
+        '
+        Me.CarboH.HeaderText = "Carbo"
+        Me.CarboH.MinimumWidth = 8
+        Me.CarboH.Name = "CarboH"
+        Me.CarboH.Width = 150
+        '
+        'ProteinN
+        '
+        Me.ProteinN.HeaderText = "Protein"
+        Me.ProteinN.MinimumWidth = 8
+        Me.ProteinN.Name = "ProteinN"
+        Me.ProteinN.Width = 150
+        '
+        'Price
+        '
+        Me.Price.HeaderText = "Price"
+        Me.Price.MinimumWidth = 8
+        Me.Price.Name = "Price"
+        Me.Price.Width = 150
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Total"
+        Me.Total.MinimumWidth = 8
+        Me.Total.Name = "Total"
+        Me.Total.Width = 150
         '
         'PictureBox1
         '
@@ -217,49 +260,6 @@ Partial Class Order
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(150, 31)
         Me.MaskedTextBox1.TabIndex = 3
-        '
-        'Menu
-        '
-        Me.Menu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Menu.HeaderText = "Menu"
-        Me.Menu.MinimumWidth = 8
-        Me.Menu.Name = "Menu"
-        Me.Menu.Width = 93
-        '
-        'Qty
-        '
-        Me.Qty.HeaderText = "Qty"
-        Me.Qty.MinimumWidth = 8
-        Me.Qty.Name = "Qty"
-        Me.Qty.Width = 150
-        '
-        'CarboH
-        '
-        Me.CarboH.HeaderText = "Carbo"
-        Me.CarboH.MinimumWidth = 8
-        Me.CarboH.Name = "CarboH"
-        Me.CarboH.Width = 150
-        '
-        'ProteinN
-        '
-        Me.ProteinN.HeaderText = "Protein"
-        Me.ProteinN.MinimumWidth = 8
-        Me.ProteinN.Name = "ProteinN"
-        Me.ProteinN.Width = 150
-        '
-        'Price
-        '
-        Me.Price.HeaderText = "Price"
-        Me.Price.MinimumWidth = 8
-        Me.Price.Name = "Price"
-        Me.Price.Width = 150
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Total"
-        Me.Total.MinimumWidth = 8
-        Me.Total.Name = "Total"
-        Me.Total.Width = 150
         '
         'Order
         '
