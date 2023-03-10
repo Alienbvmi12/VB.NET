@@ -59,9 +59,6 @@ Public Class ManageMenu
     End Sub
 
     Private Function PreviewImage(File As String)
-        ProgressBar1.Style = ProgressBarStyle.Blocks
-        ProgressBar1.Value = 0
-        ProgressBar1.Visible = True
         Try
             Dim imagePreview As Image
             Try
@@ -74,24 +71,6 @@ Public Class ManageMenu
 
                 imagePreview = Image.FromStream(myImage)
 
-                ' Get the length of the response stream
-                Dim contentLength As Long = response.ContentLength
-                Dim totalBytesRead As Long = 0
-                Dim buffer As Byte() = New Byte(4096) {}
-                Dim bytesRead As Integer = 0
-
-                ' Loop through the response stream and read the data in chunks
-                Do
-                    bytesRead = stream.Read(buffer, 0, buffer.Length)
-                    If bytesRead > 0 Then
-                        ' Update the progress bar with the percentage of data read
-                        totalBytesRead += bytesRead
-                        Dim percentComplete As Integer = CInt(Math.Round((totalBytesRead / contentLength) * 100))
-                        ProgressBar1.Value = percentComplete
-                    End If
-                Loop While bytesRead > 0
-
-
                 stream.Close()
                 response.Close()
             End Try
@@ -100,7 +79,6 @@ Public Class ManageMenu
         Catch ex As Exception
             PictureBox1.Image = Nothing
         End Try
-        ProgressBar1.Visible = False
     End Function
 
     Private Sub MaskedTextBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles MaskedTextBox2.KeyUp
@@ -170,5 +148,9 @@ Public Class ManageMenu
         MaskedTextBox2.Text = ""
         MaskedTextBox3.Text = ""
         MaskedTextBox4.Text = ""
+    End Sub
+
+    Private Sub MaskedTextBox2_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles MaskedTextBox2.MaskInputRejected
+
     End Sub
 End Class

@@ -19,5 +19,8 @@
     <Compile Update="Order.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Payment.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

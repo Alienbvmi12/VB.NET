@@ -30,3 +30,4 @@ C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-wi
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.HomeCashier.resources
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.ManageMember.resources
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.Order.resources
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.Payment.resources

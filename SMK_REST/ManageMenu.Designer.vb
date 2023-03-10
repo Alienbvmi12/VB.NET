@@ -44,7 +44,6 @@ Partial Class ManageMenu
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -232,14 +231,6 @@ Partial Class ManageMenu
         Me.MaskedTextBox4.TabIndex = 26
         Me.MaskedTextBox4.ValidatingType = GetType(Integer)
         '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(445, 544)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(182, 34)
-        Me.ProgressBar1.TabIndex = 27
-        Me.ProgressBar1.Visible = False
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -285,7 +276,6 @@ Partial Class ManageMenu
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.MaskedTextBox4)
         Me.Controls.Add(Me.MaskedTextBox3)
         Me.Controls.Add(Me.MaskedTextBox2)
@@ -338,7 +328,6 @@ Partial Class ManageMenu
     Friend WithEvents MaskedTextBox2 As MaskedTextBox
     Friend WithEvents MaskedTextBox3 As MaskedTextBox
     Friend WithEvents MaskedTextBox4 As MaskedTextBox
-    Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button5 As Button

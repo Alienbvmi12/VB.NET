@@ -24,10 +24,10 @@ Partial Class HomeCashier
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,6 +52,16 @@ Partial Class HomeCashier
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(431, 361)
         Me.Panel1.TabIndex = 1
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Button3.Location = New System.Drawing.Point(122, 180)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(175, 34)
+        Me.Button3.TabIndex = 6
+        Me.Button3.Text = "Order"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -82,16 +92,6 @@ Partial Class HomeCashier
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Payment"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button3.Location = New System.Drawing.Point(122, 180)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(175, 34)
-        Me.Button3.TabIndex = 6
-        Me.Button3.Text = "Order"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'HomeCashier
         '

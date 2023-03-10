@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label2.Text += Form1.dt.Rows(0)(1)
+        Label2.Text += Form1.UserName
         Form1.Hide()
     End Sub
 
