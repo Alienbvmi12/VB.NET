@@ -51,6 +51,8 @@ Partial Class Order
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -63,18 +65,18 @@ Partial Class Order
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Location = New System.Drawing.Point(63, 125)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(755, 269)
+        Me.Panel1.Size = New System.Drawing.Size(874, 269)
         Me.Panel1.TabIndex = 0
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 0)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 33
-        Me.DataGridView1.Size = New System.Drawing.Size(752, 266)
+        Me.DataGridView1.Size = New System.Drawing.Size(874, 263)
         Me.DataGridView1.TabIndex = 0
         '
         'Panel2
@@ -82,7 +84,7 @@ Partial Class Order
         Me.Panel2.Controls.Add(Me.DataGridView2)
         Me.Panel2.Location = New System.Drawing.Point(63, 664)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(755, 244)
+        Me.Panel2.Size = New System.Drawing.Size(874, 244)
         Me.Panel2.TabIndex = 1
         '
         'DataGridView2
@@ -94,7 +96,7 @@ Partial Class Order
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersWidth = 62
         Me.DataGridView2.RowTemplate.Height = 33
-        Me.DataGridView2.Size = New System.Drawing.Size(752, 241)
+        Me.DataGridView2.Size = New System.Drawing.Size(874, 241)
         Me.DataGridView2.TabIndex = 0
         '
         'Menu
@@ -148,7 +150,7 @@ Partial Class Order
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(198, 454)
+        Me.PictureBox1.Location = New System.Drawing.Point(424, 452)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(155, 161)
         Me.PictureBox1.TabIndex = 2
@@ -156,7 +158,7 @@ Partial Class Order
         '
         'MaskedTextBox2
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(525, 491)
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(751, 489)
         Me.MaskedTextBox2.Mask = "00000"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
         Me.MaskedTextBox2.Size = New System.Drawing.Size(150, 31)
@@ -166,7 +168,7 @@ Partial Class Order
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(395, 454)
+        Me.Label1.Location = New System.Drawing.Point(621, 452)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 25)
         Me.Label1.TabIndex = 5
@@ -175,7 +177,7 @@ Partial Class Order
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(395, 491)
+        Me.Label2.Location = New System.Drawing.Point(621, 489)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 25)
         Me.Label2.TabIndex = 6
@@ -183,7 +185,7 @@ Partial Class Order
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(395, 581)
+        Me.Button1.Location = New System.Drawing.Point(621, 579)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(112, 34)
         Me.Button1.TabIndex = 7
@@ -192,7 +194,7 @@ Partial Class Order
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(563, 581)
+        Me.Button2.Location = New System.Drawing.Point(789, 579)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(112, 34)
         Me.Button2.TabIndex = 8
@@ -202,7 +204,7 @@ Partial Class Order
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(63, 939)
+        Me.Label3.Location = New System.Drawing.Point(141, 938)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(74, 25)
         Me.Label3.TabIndex = 9
@@ -210,7 +212,7 @@ Partial Class Order
         '
         'carbo
         '
-        Me.carbo.Location = New System.Drawing.Point(134, 939)
+        Me.carbo.Location = New System.Drawing.Point(212, 938)
         Me.carbo.Name = "carbo"
         Me.carbo.Size = New System.Drawing.Size(83, 38)
         Me.carbo.TabIndex = 10
@@ -219,7 +221,7 @@ Partial Class Order
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(223, 939)
+        Me.Label5.Location = New System.Drawing.Point(301, 938)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(82, 25)
         Me.Label5.TabIndex = 11
@@ -227,7 +229,7 @@ Partial Class Order
         '
         'protein
         '
-        Me.protein.Location = New System.Drawing.Point(302, 939)
+        Me.protein.Location = New System.Drawing.Point(380, 938)
         Me.protein.Name = "protein"
         Me.protein.Size = New System.Drawing.Size(81, 38)
         Me.protein.TabIndex = 12
@@ -237,7 +239,7 @@ Partial Class Order
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(336, 39)
+        Me.Label4.Location = New System.Drawing.Point(402, 37)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(201, 42)
         Me.Label4.TabIndex = 31
@@ -245,7 +247,7 @@ Partial Class Order
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(389, 934)
+        Me.Button3.Location = New System.Drawing.Point(467, 933)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(112, 34)
         Me.Button3.TabIndex = 32
@@ -255,7 +257,7 @@ Partial Class Order
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(635, 934)
+        Me.Label6.Location = New System.Drawing.Point(713, 933)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 25)
         Me.Label6.TabIndex = 33
@@ -271,7 +273,7 @@ Partial Class Order
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(526, 452)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(752, 450)
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(149, 32)
         Me.MaskedTextBox1.TabIndex = 36
@@ -280,7 +282,7 @@ Partial Class Order
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(525, 528)
+        Me.ComboBox1.Location = New System.Drawing.Point(751, 526)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(150, 33)
         Me.ComboBox1.TabIndex = 37
@@ -288,7 +290,7 @@ Partial Class Order
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(395, 531)
+        Me.Label9.Location = New System.Drawing.Point(621, 529)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(79, 25)
         Me.Label9.TabIndex = 38
@@ -296,26 +298,43 @@ Partial Class Order
         '
         'Label7
         '
-        Me.Label7.Location = New System.Drawing.Point(743, 934)
+        Me.Label7.Location = New System.Drawing.Point(821, 933)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(81, 38)
+        Me.Label7.Size = New System.Drawing.Size(124, 38)
         Me.Label7.TabIndex = 39
         Me.Label7.Text = "0"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(699, 934)
+        Me.Label10.Location = New System.Drawing.Point(777, 933)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(38, 25)
         Me.Label10.TabIndex = 40
         Me.Label10.Text = "Rp."
         '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.Location = New System.Drawing.Point(63, 399)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 41
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(621, 624)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(112, 34)
+        Me.Button4.TabIndex = 42
+        Me.Button4.Text = "Clear"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(878, 1001)
+        Me.ClientSize = New System.Drawing.Size(1009, 1001)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.MonthCalendar1)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label9)
@@ -378,4 +397,6 @@ Partial Class Order
     Friend WithEvents Total As DataGridViewTextBoxColumn
     Friend WithEvents Label7 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents Button4 As Button
 End Class

@@ -56,7 +56,7 @@ Partial Class Home
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(175, 34)
         Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Order"
+        Me.Button1.Text = "Report"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2

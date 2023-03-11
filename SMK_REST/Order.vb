@@ -160,7 +160,7 @@ Public Class Order
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim myTime As DateTime = DateTime.Now
+        Dim myTime As DateTime = MonthCalendar1.SelectionStart
         sql = "select count(id) from orderheader"
         dt2 = Read(sql)
         Dim AI As String = dt2.Rows(0)(0).ToString()
@@ -239,6 +239,10 @@ Public Class Order
         Else
             previewImage("http://false.net")
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        DataGridView2.Rows.Clear()
     End Sub
 End Class
 
