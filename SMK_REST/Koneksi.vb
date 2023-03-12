@@ -25,7 +25,7 @@ Module Koneksi
                 command.ExecuteNonQuery()
                 MessageBox.Show("Operation Success", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
-                MessageBox.Show("Error, unable to connect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Oops! Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 MsgBox(ex.ToString())
             End Try
             koneksi.Close()

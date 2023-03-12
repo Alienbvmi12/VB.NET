@@ -20,8 +20,11 @@ Public Class ManageMenu
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        MaskedTextBox2.Text = UploadFile("http://localhost:8080/rayhan/uploadImg.php", MaskedTextBox2.Text)
-        insert()
+        If MaskedTextBox0.Text = "" Or MaskedTextBox0.Text = "" Or MaskedTextBox1.Text = "" Or MaskedTextBox2.Text = "" Or MaskedTextBox3.Text = "" Or MaskedTextBox4.Text = "" Then
+        Else
+            MaskedTextBox2.Text = UploadFile("http://localhost:8080/rayhan/uploadImg.php", MaskedTextBox2.Text)
+            insert()
+        End If
     End Sub
 
     Private Function TampilTabel()

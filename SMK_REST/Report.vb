@@ -66,22 +66,26 @@ Public Class Report
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim indexFrom As String = ComboBox2.SelectedIndex + 1
-        Dim indexTo As String = Integer.Parse(indexFrom) + Integer.Parse(ComboBox1.SelectedIndex)
-        If indexFrom.Length = 1 Then
-            indexFrom = "0" & indexFrom
-        End If
-        If indexTo.Length = 1 Then
-            indexTo = "0" & indexTo
-        End If
-        sql = "select month(orderheader.date) as date,sum(orderdetail.qty * msmenu.price) as income 
+        Try
+            Dim indexFrom As String = ComboBox2.SelectedIndex + 1
+            Dim indexTo As String = Integer.Parse(indexFrom) + Integer.Parse(ComboBox1.SelectedIndex)
+            If indexFrom.Length = 1 Then
+                indexFrom = "0" & indexFrom
+            End If
+            If indexTo.Length = 1 Then
+                indexTo = "0" & indexTo
+            End If
+            sql = "select month(orderheader.date) as date,sum(orderdetail.qty * msmenu.price) as income 
                 from orderdetail, msmenu, orderheader 
                 where (orderheader.date between '" & year & "-" & indexFrom & "-01' and '" & year & "-" & indexTo & "-31') 
                 and orderdetail.menuid=msmenu.id 
                 and orderdetail.orderid=orderheader.id group by month(date)"
-        dt = Read(sql)
-        reader = Read(sql)
-        DataGridView1.DataSource = dt
-        Income_Report()
+            dt = Read(sql)
+            reader = Read(sql)
+            DataGridView1.DataSource = dt
+            Income_Report()
+        Catch ex As Exception
+            MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

@@ -44,49 +44,53 @@ Public Class Order
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        sql = "select * from msmenu where name='" & MaskedTextBox1.Text & "'"
-        dt = Read(sql)
-        Dim pil = True
-        If DataGridView2.RowCount > 0 Then
-            For Each row As DataGridViewRow In DataGridView2.Rows
-                If row.Cells(0).Value = MaskedTextBox1.Text Then
-                    row.Cells(1).Value = (Integer.Parse(row.Cells(1).Value) + Integer.Parse(MaskedTextBox2.Text)).ToString()
-                    row.Cells(2).Value = (Integer.Parse(row.Cells(2).Value) + Integer.Parse(MaskedTextBox2.Text)).ToString()
-                    row.Cells(3).Value = (Integer.Parse(row.Cells(3).Value) + Integer.Parse(MaskedTextBox2.Text)).ToString()
-                    row.Cells(5).Value = (Integer.Parse(row.Cells(5).Value) + Integer.Parse(MaskedTextBox2.Text) * dt.Rows(0)(2)).ToString()
-                    pil = False
+        Try
+            sql = "select * from msmenu where name='" & MaskedTextBox1.Text & "'"
+            dt = Read(sql)
+            Dim pil = True
+            If DataGridView2.RowCount > 0 Then
+                For Each row As DataGridViewRow In DataGridView2.Rows
+                    If row.Cells(0).Value = MaskedTextBox1.Text Then
+                        row.Cells(1).Value = (Integer.Parse(row.Cells(1).Value) + Integer.Parse(MaskedTextBox2.Text)).ToString()
+                        row.Cells(2).Value = (Integer.Parse(row.Cells(2).Value) + Integer.Parse(MaskedTextBox2.Text)).ToString()
+                        row.Cells(3).Value = (Integer.Parse(row.Cells(3).Value) + Integer.Parse(MaskedTextBox2.Text)).ToString()
+                        row.Cells(5).Value = (Integer.Parse(row.Cells(5).Value) + Integer.Parse(MaskedTextBox2.Text) * dt.Rows(0)(2)).ToString()
+                        pil = False
+                        Hasil()
+                    End If
+
+                Next
+                If pil Then
+                    Dim newRow As New DataGridViewRow
+                    newRow.CreateCells(DataGridView2)
+                    newRow.Cells(0).Value = MaskedTextBox1.Text
+                    newRow.Cells(1).Value = MaskedTextBox2.Text
+                    newRow.Cells(2).Value = dt.Rows(0)(4)
+                    newRow.Cells(3).Value = dt.Rows(0)(5)
+                    newRow.Cells(4).Value = dt.Rows(0)(2)
+                    newRow.Cells(5).Value = dt.Rows(0)(2) * newRow.Cells(1).Value
+                    IdRow.Add(aydi)
+                    DataGridView2.Rows.Add(newRow)
                     Hasil()
                 End If
-
-            Next
-            If pil Then
-                Dim newRow As New DataGridViewRow
-                newRow.CreateCells(DataGridView2)
-                newRow.Cells(0).Value = MaskedTextBox1.Text
-                newRow.Cells(1).Value = MaskedTextBox2.Text
-                newRow.Cells(2).Value = dt.Rows(0)(4)
-                newRow.Cells(3).Value = dt.Rows(0)(5)
-                newRow.Cells(4).Value = dt.Rows(0)(2)
-                newRow.Cells(5).Value = dt.Rows(0)(2) * newRow.Cells(1).Value
-                IdRow.Add(aydi)
-                DataGridView2.Rows.Add(newRow)
-                Hasil()
+            Else
+                If pil Then
+                    Dim newRow As New DataGridViewRow
+                    newRow.CreateCells(DataGridView2)
+                    newRow.Cells(0).Value = MaskedTextBox1.Text
+                    newRow.Cells(1).Value = MaskedTextBox2.Text
+                    newRow.Cells(2).Value = dt.Rows(0)(4)
+                    newRow.Cells(3).Value = dt.Rows(0)(5)
+                    newRow.Cells(4).Value = dt.Rows(0)(2)
+                    newRow.Cells(5).Value = dt.Rows(0)(2) * newRow.Cells(1).Value
+                    DataGridView2.Rows.Add(newRow)
+                    IdRow.Add(aydi)
+                    Hasil()
+                End If
             End If
-        Else
-            If pil Then
-                Dim newRow As New DataGridViewRow
-                newRow.CreateCells(DataGridView2)
-                newRow.Cells(0).Value = MaskedTextBox1.Text
-                newRow.Cells(1).Value = MaskedTextBox2.Text
-                newRow.Cells(2).Value = dt.Rows(0)(4)
-                newRow.Cells(3).Value = dt.Rows(0)(5)
-                newRow.Cells(4).Value = dt.Rows(0)(2)
-                newRow.Cells(5).Value = dt.Rows(0)(2) * newRow.Cells(1).Value
-                DataGridView2.Rows.Add(newRow)
-                IdRow.Add(aydi)
-                Hasil()
-            End If
-        End If
+        Catch
+            MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub Hasil()
@@ -109,15 +113,19 @@ Public Class Order
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim Count As Integer
-        For Each row As DataGridViewRow In DataGridView2.Rows
-            If row.Cells(0).Value = MaskedTextBox1.Text Then
-                DataGridView2.Rows.Remove(row)
-                IdRow.RemoveAt(Count)
-            End If
-            Count += 1
-        Next
-        Hasil()
+        Try
+            Dim Count As Integer
+            For Each row As DataGridViewRow In DataGridView2.Rows
+                If row.Cells(0).Value = MaskedTextBox1.Text Then
+                    DataGridView2.Rows.Remove(row)
+                    IdRow.RemoveAt(Count)
+                End If
+                Count += 1
+            Next
+            Hasil()
+        Catch
+            MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
@@ -163,40 +171,44 @@ Public Class Order
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim myTime As DateTime = MonthCalendar1.SelectionStart
-        sql = "select count(id) from orderheader"
-        dt2 = Read(sql)
-        Dim AI As String = dt2.Rows(0)(0).ToString()
-        If AI.Length = 4 Then
-            AI = AI
-        ElseIf AI.Length = 3 Then
-            AI = "0" & AI
-        ElseIf AI.Length = 2 Then
-            AI = "00" & AI
-        ElseIf AI.Length = 1 Then
-            AI = "000" & AI
-        Else
-            AI = "000" & AI
-        End If
-        Dim bindSql
-        Dim orderId As String = myTime.ToString("yyyyMMdd") & AI
+        Try
+            Dim myTime As DateTime = MonthCalendar1.SelectionStart
+            sql = "select count(id) from orderheader"
+            dt2 = Read(sql)
+            Dim AI As String = dt2.Rows(0)(0).ToString()
+            If AI.Length = 4 Then
+                AI = AI
+            ElseIf AI.Length = 3 Then
+                AI = "0" & AI
+            ElseIf AI.Length = 2 Then
+                AI = "00" & AI
+            ElseIf AI.Length = 1 Then
+                AI = "000" & AI
+            Else
+                AI = "000" & AI
+            End If
+            Dim bindSql
+            Dim orderId As String = myTime.ToString("yyyyMMdd") & AI
 
-        sql = "Insert into orderheader (id, employeeid, memberid, date) values(@id, @emp, @mid, @date)"
-        bindSql = Bind(sql, {"id", "@emp", "@mid", "@date"}, {orderId, Form1.UserId, ComboBox1.Text.Split(".")(0), myTime.ToString("yyyy-MM-dd")})
-        NoReturnValue(bindSql)
-
-        Dim Count As Integer = 0
-
-        Dim JumRow = DataGridView2.Rows.Count - 2
-
-        For Index As Integer = 0 To JumRow
-            Dim row As DataGridViewRow = DataGridView2.Rows(Count)
-            sql = "Insert into orderdetail (orderid, menuid, qty, status) values (@oid, @mid, @qty, @stat)"
-            bindSql = Bind(sql, {"@oid", "@mid", "@qty", "@stat"}, {orderId, IdRow.Item(Count), row.Cells(1).Value.ToString(), "Belum"})
+            sql = "Insert into orderheader (id, employeeid, memberid, date) values(@id, @emp, @mid, @date)"
+            bindSql = Bind(sql, {"id", "@emp", "@mid", "@date"}, {orderId, Form1.UserId, ComboBox1.Text.Split(".")(0), myTime.ToString("yyyy-MM-dd")})
             NoReturnValue(bindSql)
-            Count += 1
-        Next
-        Payment.LoadNo()
+
+            Dim Count As Integer = 0
+
+            Dim JumRow = DataGridView2.Rows.Count - 2
+
+            For Index As Integer = 0 To JumRow
+                Dim row As DataGridViewRow = DataGridView2.Rows(Count)
+                sql = "Insert into orderdetail (orderid, menuid, qty, status) values (@oid, @mid, @qty, @stat)"
+                bindSql = Bind(sql, {"@oid", "@mid", "@qty", "@stat"}, {orderId, IdRow.Item(Count), row.Cells(1).Value.ToString(), "Belum"})
+                NoReturnValue(bindSql)
+                Count += 1
+            Next
+            Payment.LoadNo()
+        Catch
+            MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick

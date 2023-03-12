@@ -53,18 +53,22 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        sql = "update orderdetail set status='Sudah' where orderId=@a"
-        Dim finalSql = Bind(sql, {"a"}, {ComboBox3.Text})
-        NoReturnValue(finalSql)
-        If ComboBox1.SelectedIndex = 0 Then
-            sql = "update orderheader set paymenttype=@payt, cardnumber=@card, bank=@bank where id=@a"
-            finalSql = Bind(sql, {"a", "@payt", "@card", "@bank"}, {ComboBox3.Text, ComboBox1.Text, CardNumber.Text, NamaBank.Text})
-        Else
-            sql = "update orderheader set paymenttype=@payt where id=@a"
-            finalSql = Bind(sql, {"a", "@payt"}, {ComboBox3.Text, ComboBox1.Text})
-        End If
-        NoReturnValue(finalSql)
-        LoadNo()
+        Try
+            sql = "update orderdetail set status='Sudah' where orderId=@a"
+            Dim finalSql = Bind(sql, {"a"}, {ComboBox3.Text})
+            NoReturnValue(finalSql)
+            If ComboBox1.SelectedIndex = 0 Then
+                sql = "update orderheader set paymenttype=@payt, cardnumber=@card, bank=@bank where id=@a"
+                finalSql = Bind(sql, {"a", "@payt", "@card", "@bank"}, {ComboBox3.Text, ComboBox1.Text, CardNumber.Text, NamaBank.Text})
+            Else
+                sql = "update orderheader set paymenttype=@payt where id=@a"
+                finalSql = Bind(sql, {"a", "@payt"}, {ComboBox3.Text, ComboBox1.Text})
+            End If
+            NoReturnValue(finalSql)
+            LoadNo()
+        Catch
+            MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub Nominal_KeyUp(sender As Object, e As KeyEventArgs) Handles Nominal.KeyUp
