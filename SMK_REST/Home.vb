@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label2.Text += Form1.UserName
+        Label2.Text += Form1.dt.Rows(0)(1)
         Form1.Hide()
     End Sub
 
@@ -27,5 +27,9 @@
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         ManageMember.Show()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
     End Sub
 End Class

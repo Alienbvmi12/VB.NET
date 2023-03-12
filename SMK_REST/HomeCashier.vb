@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub HomeCashier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label2.Text += Form1.UserName
+        Label2.Text += Form1.dt.Rows(0)(1)
         Form1.Hide()
     End Sub
 

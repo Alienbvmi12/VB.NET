@@ -1,6 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Windows.Forms.DataVisualization.Charting
-
 Public Class Report
     Dim months() As String = {"January", "February", "March", "April", "May", "June",
                            "July", "August", "September", "October", "November", "December"}
@@ -8,6 +7,7 @@ Public Class Report
     Dim sql As String
     Dim dt As New DataTable
     Dim reader As New DataTable
+
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
