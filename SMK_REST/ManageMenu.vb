@@ -20,6 +20,7 @@ Public Class ManageMenu
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        MaskedTextBox2.Text = UploadFile("http://localhost:8080/rayhan/uploadImg.php", MaskedTextBox2.Text)
         insert()
     End Sub
 
@@ -108,6 +109,7 @@ Public Class ManageMenu
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.RowIndex >= 0 Then
+            PreviewImage(MaskedTextBox2.Text)
             Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
             MaskedTextBox0.Text = selectedRow.Cells(1).Value.ToString()
             MaskedTextBox1.Text = selectedRow.Cells(2).Value.ToString()
@@ -121,12 +123,14 @@ Public Class ManageMenu
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If CheckBox1.Checked = False Then
             If MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = DialogResult.Yes Then
+                MaskedTextBox2.Text = UploadFile("http://localhost:8080/rayhan/uploadImg.php", MaskedTextBox2.Text)
                 Dim sql As String = "update msmenu set name=@name, price=@price, photo=@photo, carbo=@carbo, protein=@protein where id=@id"
                 Dim finalSql = Bind(sql, {"@name", "@price", "@photo", "@carbo", "@protein", "@id"}, {MaskedTextBox0.Text, MaskedTextBox1.Text, MaskedTextBox2.Text, MaskedTextBox3.Text, MaskedTextBox4.Text, Label3.Text})
                 NoReturnValue(finalSql)
                 TampilTabel()
             End If
         Else
+            MaskedTextBox2.Text = UploadFile("http://localhost:8080/rayhan/uploadImg.php", MaskedTextBox2.Text)
             Dim sql As String = "update msmenu set name=@name, price=@price, photo=@photo, carbo=@carbo, protein=@protein where id=@id"
             Dim finalSql = Bind(sql, {"@name", "@price", "@photo", "@carbo", "@protein", "@id"}, {MaskedTextBox0.Text, MaskedTextBox1.Text, MaskedTextBox2.Text, MaskedTextBox3.Text, MaskedTextBox4.Text, Label3.Text})
             NoReturnValue(finalSql)

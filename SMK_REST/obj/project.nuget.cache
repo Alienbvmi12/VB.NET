@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Mmhb9AWMIEdQw56VmM8YQNp88CwThjG90+gFYDd//C02D9PZbAMx/LPJZNgCRfBbzDRM+FCML7LSaYDSJ+DIVA==",
+  "dgSpecHash": "w/CaPm0T9PYRWg+BGcyxPnmPmYOL55rp+cRPBzBkYhNDzhdZPAVWVRy0fdRHM0aiYVGPJnBg71yXzuyKHFXu+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Documents\\Visual Studio 2022\\SMK_REST\\SMK_REST\\SMK_REST.vbproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0-preview.1.23110.8\\microsoft.win32.systemevents.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\scottplot\\4.1.61\\scottplot.4.1.61.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\scottplot.winforms\\4.1.61\\scottplot.winforms.4.1.61.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.drawing.common\\8.0.0-preview.1.23110.8\\system.drawing.common.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

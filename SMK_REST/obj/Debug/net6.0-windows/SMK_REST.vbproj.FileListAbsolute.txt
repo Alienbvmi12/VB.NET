@@ -2,7 +2,6 @@ C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-wi
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\SMK_REST.deps.json
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\SMK_REST.runtimeconfig.json
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\SMK_REST.dll
-C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\ref\SMK_REST.dll
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\SMK_REST.pdb
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\MySql.Data.dll
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\Google.Protobuf.dll
@@ -33,3 +32,10 @@ C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-wi
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.Payment.resources
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.Report.resources
 C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.Form2.resources
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\refint\SMK_REST.dll
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\obj\Debug\net6.0-windows\SMK_REST.vbproj.ResolveComReference.cache
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\ScottPlot.dll
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\ScottPlot.WinForms.dll
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\user\Documents\Visual Studio 2022\SMK_REST\SMK_REST\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll

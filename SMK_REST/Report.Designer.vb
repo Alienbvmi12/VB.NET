@@ -22,119 +22,127 @@ Partial Class Report
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Location = New System.Drawing.Point(68, 500)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(621, 250)
-        Me.Panel1.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Location = New System.Drawing.Point(68, 244)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(621, 250)
-        Me.Panel2.TabIndex = 1
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 62
-        Me.DataGridView1.RowTemplate.Height = 33
-        Me.DataGridView1.Size = New System.Drawing.Size(621, 250)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(253, 41)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(233, 48)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Form Report"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(272, 162)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(150, 33)
-        Me.ComboBox1.TabIndex = 38
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(272, 123)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(150, 33)
-        Me.ComboBox2.TabIndex = 39
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(190, 123)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 25)
-        Me.Label2.TabIndex = 40
-        Me.Label2.Text = "From"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(190, 162)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(30, 25)
-        Me.Label3.TabIndex = 41
-        Me.Label3.Text = "To"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(428, 162)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(112, 34)
-        Me.Button1.TabIndex = 42
-        Me.Button1.Text = "Generate"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Report
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(759, 796)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Name = "Report"
-        Me.Text = "Report"
-        Me.Panel2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        Panel1 = New Panel()
+        Panel2 = New Panel()
+        DataGridView1 = New DataGridView()
+        Label1 = New Label()
+        ComboBox1 = New ComboBox()
+        ComboBox2 = New ComboBox()
+        Label2 = New Label()
+        Label3 = New Label()
+        Button1 = New Button()
+        FormsPlot1 = New ScottPlot.FormsPlot()
+        Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(FormsPlot1)
+        Panel1.Location = New Point(68, 500)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(621, 250)
+        Panel1.TabIndex = 0
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(DataGridView1)
+        Panel2.Location = New Point(68, 244)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(621, 250)
+        Panel2.TabIndex = 1
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(0, 0)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidth = 62
+        DataGridView1.RowTemplate.Height = 33
+        DataGridView1.Size = New Size(621, 250)
+        DataGridView1.TabIndex = 0
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(253, 41)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(233, 48)
+        Label1.TabIndex = 2
+        Label1.Text = "Form Report"' 
+        ' ComboBox1
+        ' 
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(272, 162)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(150, 33)
+        ComboBox1.TabIndex = 38
+        ' 
+        ' ComboBox2
+        ' 
+        ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox2.FormattingEnabled = True
+        ComboBox2.Location = New Point(272, 123)
+        ComboBox2.Name = "ComboBox2"
+        ComboBox2.Size = New Size(150, 33)
+        ComboBox2.TabIndex = 39
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(190, 123)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(54, 25)
+        Label2.TabIndex = 40
+        Label2.Text = "From"' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(190, 162)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(30, 25)
+        Label3.TabIndex = 41
+        Label3.Text = "To"' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(428, 162)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(112, 34)
+        Button1.TabIndex = 42
+        Button1.Text = "Generate"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' FormsPlot1
+        ' 
+        FormsPlot1.Location = New Point(0, 2)
+        FormsPlot1.Margin = New Padding(6, 5, 6, 5)
+        FormsPlot1.Name = "FormsPlot1"
+        FormsPlot1.Size = New Size(621, 248)
+        FormsPlot1.TabIndex = 0
+        ' 
+        ' Report
+        ' 
+        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(759, 796)
+        Controls.Add(Button1)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(ComboBox2)
+        Controls.Add(ComboBox1)
+        Controls.Add(Label1)
+        Controls.Add(Panel2)
+        Controls.Add(Panel1)
+        Name = "Report"
+        Text = "Report"
+        Panel1.ResumeLayout(False)
+        Panel2.ResumeLayout(False)
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Panel1 As Panel
@@ -146,4 +154,5 @@ Partial Class Report
     Friend WithEvents Label3 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents FormsPlot1 As ScottPlot.FormsPlot
 End Class

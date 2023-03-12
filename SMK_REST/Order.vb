@@ -94,6 +94,9 @@ Public Class Order
         Dim ProteinN As Integer
         Dim Total As Integer
         Dim Qty As Integer
+        carbo.Text = 0
+        protein.Text = 0
+        Label7.Text = 0
         For Each row As DataGridViewRow In DataGridView2.Rows
             CarboH = row.Cells(2).Value
             ProteinN = row.Cells(3).Value

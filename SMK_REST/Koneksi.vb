@@ -1,6 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Security.Cryptography
 Imports System.Text
+Imports System.IO
+Imports System.Net
 
 Module Koneksi
     Dim strkoneksi As String = "server=localhost;user=root;password=;Persist Security Info=true;database=restoran;Allow User Variables=true"
@@ -86,6 +88,19 @@ Module Koneksi
         queryNow.CommandText = query
         Return queryNow
     End Function
+
+    'File upload
+
+    Public Function UploadFile(TargetAPI As String, ImgPath As String)
+        Try
+            Dim Client As New WebClient()
+            Dim result As Byte() = Client.UploadFile(TargetAPI, ImgPath)
+            Return System.Text.Encoding.ASCII.GetString(result)
+        Catch ex As Exception
+            Return ImgPath
+        End Try
+    End Function
+
 
 
 End Module

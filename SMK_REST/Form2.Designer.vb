@@ -22,16 +22,15 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.SuspendLayout()
-        '
-        'Form2
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(714, 450)
-        Me.Name = "Form2"
-        Me.Text = "Form2"
-        Me.ResumeLayout(False)
-
+        SuspendLayout()
+        ' 
+        ' Form2
+        ' 
+        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(714, 597)
+        Name = "Form2"
+        Text = "Form2"
+        ResumeLayout(False)
     End Sub
 End Class

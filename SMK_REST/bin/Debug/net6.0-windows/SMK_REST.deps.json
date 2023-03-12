@@ -8,12 +8,65 @@
     ".NETCoreApp,Version=v6.0": {
       "SMK_REST/1.0.0": {
         "dependencies": {
+          "ScottPlot.WinForms": "4.1.61",
+          "System.Drawing.Common": "8.0.0-preview.1.23110.8",
           "MySql.Data": "8.0.32.0"
         },
         "runtime": {
           "SMK_REST.dll": {}
         }
       },
+      "Microsoft.Win32.SystemEvents/8.0.0-preview.1.23110.8": {
+        "runtime": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.11008"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.11008"
+          }
+        }
+      },
+      "ScottPlot/4.1.61": {
+        "dependencies": {
+          "System.Drawing.Common": "8.0.0-preview.1.23110.8",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/net6.0/ScottPlot.dll": {
+            "assemblyVersion": "4.1.61.0",
+            "fileVersion": "4.1.61.0"
+          }
+        }
+      },
+      "ScottPlot.WinForms/4.1.61": {
+        "dependencies": {
+          "ScottPlot": "4.1.61"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/ScottPlot.WinForms.dll": {
+            "assemblyVersion": "4.1.61.0",
+            "fileVersion": "4.1.61.0"
+          }
+        }
+      },
+      "System.Drawing.Common/8.0.0-preview.1.23110.8": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "8.0.0-preview.1.23110.8"
+        },
+        "runtime": {
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.11008"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {},
       "MySql.Data/8.0.32.0": {
         "runtime": {
           "MySql.Data.dll": {
@@ -77,6 +130,41 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.Win32.SystemEvents/8.0.0-preview.1.23110.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3dQsCx524fIV69j2N12segpXAM3AZ/HmRv1R8be5cPomxpHwK/qm6HIHuxfR5Z/Hmw78iPcb1j865rkU/PEo2Q==",
+      "path": "microsoft.win32.systemevents/8.0.0-preview.1.23110.8",
+      "hashPath": "microsoft.win32.systemevents.8.0.0-preview.1.23110.8.nupkg.sha512"
+    },
+    "ScottPlot/4.1.61": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MdAL3fLlFMTlCGwc19w+IcPNQL77RQExZRsx5cfUdtjvJKk6X81PdQ/eKdYVIhYLhTOXJ7X60GeLU63iZg4hFA==",
+      "path": "scottplot/4.1.61",
+      "hashPath": "scottplot.4.1.61.nupkg.sha512"
+    },
+    "ScottPlot.WinForms/4.1.61": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d/VSKSUNAr+7zg0Kg4IaN7C3GE71GRmmjw3rgsJLuFrh44KCGlTF6rlabHE/ZOFaOq5eWTjaQNCDlxjK8wGEMg==",
+      "path": "scottplot.winforms/4.1.61",
+      "hashPath": "scottplot.winforms.4.1.61.nupkg.sha512"
+    },
+    "System.Drawing.Common/8.0.0-preview.1.23110.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kA337mAa3AFWkkQyYmNxtBdVvK5O6O+9V2TrXGIP2oZ4rInxqHs36MzKh7MaRD9TJ9VP4w7RYy9AQFg1Q4UbUA==",
+      "path": "system.drawing.common/8.0.0-preview.1.23110.8",
+      "hashPath": "system.drawing.common.8.0.0-preview.1.23110.8.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
     "MySql.Data/8.0.32.0": {
       "type": "reference",
